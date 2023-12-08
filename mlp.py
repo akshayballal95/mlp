@@ -96,6 +96,15 @@ class MultiLayerPerceptron:
         out, _ = self.model_forward(X)
         return out.argmax(axis=0)
 
+    """
+    Train the network using the input data and labels.
+
+    Args:
+        X (numpy.ndarray): The input data.
+        y (numpy.ndarray): The true labels.
+        iterations (int, optional): The number of iterations for training. Defaults to 20000.
+        learning_rate (float, optional): The learning rate for the update. Defaults to 0.1.
+    """
     def train(self, X, y, iterations=20000, learning_rate=0.1):
         X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2)
 
